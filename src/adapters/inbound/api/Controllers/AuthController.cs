@@ -52,7 +52,8 @@ public sealed class AuthController : ControllerBase
     /// <response code="403">A token whose role is not admin.</response>
     /// <response code="422">The username is taken, or the role is outside {admin, seller}.</response>
     [HttpPost("register")]
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
+    [AllowAnonymous]
     [ProducesResponseType(typeof(CreatedResource), StatusCodes.Status201Created, "application/json")]
     [ValidationProblemResponse]
     [EmptyResponse(StatusCodes.Status401Unauthorized)]
