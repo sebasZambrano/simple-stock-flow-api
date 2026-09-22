@@ -57,7 +57,7 @@ internal static class HostConfiguration
         IConfiguration configuration,
         string policyName) =>
         services.AddCors(options => options.AddPolicy(policyName, policy => policy
-            .WithOrigins(configuration.GetSection("Cors:Origins").Get<string[]>() ?? ["http://localhost:4200"])
+            .WithOrigins(configuration.GetSection("Cors:Origins").Get<string[]>() ?? ["http://localhost:4200", "https://simple-stock-flow-api.onrender.com"])
             .AllowAnyHeader()
             .AllowAnyMethod()));
 
